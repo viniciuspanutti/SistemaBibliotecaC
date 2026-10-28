@@ -41,17 +41,16 @@ int main(void) {
                 } // Encerra a verificacao do codigo da posicao atual.
             } // Encerra o percurso pelos codigos que ja foram cadastrados.
 
-            // Verifica primeiro se o codigo informado e negativo.
-            if (codigo < 0) {
-                // Explica que codigos negativos nao sao aceitos pelo sistema.
-                printf("Codigo invalido. Digite um valor maior ou igual a zero.\n");
+            // Os codigos dos livros precisam ser positivos.
+            if (codigo <= 0) {
+                printf("Codigo invalido. Digite um valor maior que zero.\n");
             // Se nao for negativo, verifica se o codigo ja estava cadastrado.
             } else if (codigoRepetido) {
                 // Informa que o usuario precisa escolher um codigo diferente.
                 printf("Codigo ja cadastrado. Digite outro codigo.\n");
             } // Encerra as verificacoes e mensagens de erro do codigo.
         // Volta ao inicio do bloco se pelo menos uma das duas condicoes for verdadeira.
-        } while (codigo < 0 || codigoRepetido);
+        } while (codigo <= 0 || codigoRepetido);
 
         // Repete a leitura do estoque ate que o usuario informe zero ou um valor positivo.
         do {
